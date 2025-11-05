@@ -1,0 +1,36 @@
+{
+    "Ноутбук": {
+        "quantity": 8,
+        "price": 60000.0,
+        "reserved": [
+            {
+                "order_id": "0ba55746",
+                "quantity": 2
+            }
+        ]
+    },
+    "Мышь": {
+        "quantity": 39,
+        "price": 500,
+        "reserved": [
+            {
+                "order_id": "0ba55746",
+                "quantity": 10
+            },
+            {
+                "order_id": "16cbc596",
+                "quantity": 1
+            }
+        ]
+    },
+    "Тостер": {
+        "quantity": 24,
+        "price": 3000.0,
+        "reserved": [
+            {
+                "order_id": "16cbc596",
+                "quantity": 1
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "Max": {
+        "password": "123",
+        "role": "user",
+        "email": "-@-.-",
+        "profile_created": true,
+        "created_at": "2025-11-05 04:15:16.821567"
+    },
+    "Admin": {
+        "password": "admin",
+        "role": "admin",
+        "email": "-@-.-",
+        "profile_created": true,
+        "created_at": "2025-11-05 04:20:15.959040"
+    }
+}

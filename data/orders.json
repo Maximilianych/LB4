@@ -1,0 +1,32 @@
+{
+    "0ba55746": {
+        "username": "Max",
+        "items": [
+            {
+                "item_name": "Ноутбук",
+                "quantity": 2
+            },
+            {
+                "item_name": "Мышь",
+                "quantity": 10
+            }
+        ],
+        "status": "in_delivery",
+        "total": 125000.0
+    },
+    "16cbc596": {
+        "username": "Max",
+        "items": [
+            {
+                "item_name": "Тостер",
+                "quantity": 1
+            },
+            {
+                "item_name": "Мышь",
+                "quantity": 1
+            }
+        ],
+        "status": "in_delivery",
+        "total": 3500.0
+    }
+}
