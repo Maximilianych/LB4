@@ -10,7 +10,7 @@
         ]
     },
     "Мышь": {
-        "quantity": 39,
+        "quantity": 49,
         "price": 500,
         "reserved": [
             {
@@ -30,6 +30,16 @@
             {
                 "order_id": "16cbc596",
                 "quantity": 1
+            }
+        ]
+    },
+    "Микрофон": {
+        "quantity": 18,
+        "price": 1500.0,
+        "reserved": [
+            {
+                "order_id": "58fdac71",
+                "quantity": 2
             }
         ]
     }

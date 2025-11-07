@@ -54,50 +54,77 @@ def main():
         else:
             print("Вы не авторизованы")
         print("="*60)
-        
         print("\nВыберите действие:")
-        print("1. Зарегистрировать нового пользователя")
-        print("2. Войти в систему")
-        print("3. Управлять складом")
-        print("4. Просмотреть склад")
-        print("5. Создать заказ")
-        print("6. Выйти из аккаунта")
-        print("0. Выход")
         
-        choice = input("\nВведите номер действия: ").strip()
-        
-        if choice == "1":
-            register_user(bus)
-        elif choice == "2":
-            login_user(bus)
-        elif choice == "3":
-            if not current_user:
-                print("Необходимо войти в систему")
-                continue
-            manage_inventory(bus)
-        elif choice == "4":
-            view_inventory()
-        elif choice == "5":
-            if not current_user:
-                print("Необходимо войти в систему")
-                continue
-            create_order(bus)
-        elif choice == "6":
-            if current_user:
-                log_action("Пользователь {current_user['username']} вышел из системы")
-                current_user = None
+        if not current_user: # Без роли
+            print("1. Зарегистрировать нового пользователя")
+            print("2. Войти в систему")
+            print("0. Выход")
+            
+            choice = input("\nВведите номер действия: ").strip()
+            
+            if choice == "1":
+                register_user(bus)
+            elif choice == "2":
+                login_user(bus)
+            elif choice == "0":
+                print("\n" + "="*60)
+                print("Выход из системы... До свидания!")
+                print("="*60)
+                break
             else:
-                print("Вы не авторизованы.")
+                print("Некорректный выбор")
         
-        elif choice == "0":
-            print("\n" + "="*60)
-            print("Выход из системы... До свидания!")
-            print("="*60)
-            break
+        elif current_user["role"] == "admin": # Admin
+            print("1. Просмотреть склад")
+            print("2. Управлять складом")
+            print("3. Создать заказ")
+            print("4. Выйти из аккаунта")
+            print("0. Выход")
+            
+            choice = input("\nВведите номер действия: ").strip()
+            
+            if choice == "1":
+                view_inventory()
+            elif choice == "2":
+                manage_inventory(bus)
+            elif choice == "3":
+                create_order(bus)
+            elif choice == "4":
+                log_action("ВЫХОД", user=current_user['username'])
+                print(f"Пользователь {current_user['username']} вышел из системы")
+                current_user = None
+            elif choice == "0":
+                print("\n" + "="*60)
+                print("Выход из системы... До свидания!")
+                print("="*60)
+                break
+            else:
+                print("Некорректный выбор")
         
-        else:
-            print("Некорректный выбор, попробуйте снова.")
-
+        else: # User
+            print("1. Просмотреть склад")
+            print("2. Создать заказ")
+            print("3. Выйти из аккаунта")
+            print("0. Выход")
+            
+            choice = input("\nВведите номер действия: ").strip()
+            
+            if choice == "1":
+                view_inventory()
+            elif choice == "2":
+                create_order(bus)
+            elif choice == "3":
+                log_action("ВЫХОД", user=current_user['username'])
+                print(f"Пользователь {current_user['username']} вышел из системы")
+                current_user = None
+            elif choice == "0":
+                print("\n" + "="*60)
+                print("Выход из системы... До свидания!")
+                print("="*60)
+                break
+            else:
+                print("Некорректный выбор, попробуйте снова.")
 
 def register_user(bus):
     print("\n" + "-"*60)

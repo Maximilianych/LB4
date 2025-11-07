@@ -12,5 +12,12 @@
         "email": "-@-.-",
         "profile_created": true,
         "created_at": "2025-11-05 04:20:15.959040"
+    },
+    "Admin2": {
+        "password": "admin2",
+        "role": "admin",
+        "email": "-@-.-",
+        "profile_created": true,
+        "created_at": "2025-11-07 11:08:38.485987"
     }
 }
